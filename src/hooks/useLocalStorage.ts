@@ -33,7 +33,7 @@ export function useLocalStorage() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed: PersistedState = JSON.parse(stored);
-        if (parsed.nodes?.length || parsed.edges?.length) {
+        if (parsed.nodes?.length) {
           setNodes(parsed.nodes ?? []);
           setEdges(parsed.edges ?? []);
           setGraphMode(parsed.graphMode ?? 'undirected');
