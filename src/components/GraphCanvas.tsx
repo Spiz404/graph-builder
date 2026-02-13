@@ -30,11 +30,7 @@ interface SelectedEdgeInfo {
 }
 
 export default function GraphCanvas() {
-  const nodes = useGraphStore((s) => s.nodes);
-  const edges = useGraphStore((s) => s.edges);
-  const onNodesChange = useGraphStore((s) => s.onNodesChange);
-  const onEdgesChange = useGraphStore((s) => s.onEdgesChange);
-  const addEdge = useGraphStore((s) => s.addEdge);
+  const { nodes, edges, onNodesChange, onEdgesChange, addEdge } = useGraphStore();
 
   const [selectedEdge, setSelectedEdge] = useState<SelectedEdgeInfo | null>(null);
 
